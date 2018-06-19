@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>层级选择器</title>
+	<style>
+		.left,
+	    .right {
+	        width: 300px;
+	        height: 120px;
+	    }
+	    
+	    .left div,
+	    .right div {
+	        width: 100px;
+	        height: 90px;
+	        padding: 5px;
+	        margin: 5px;
+	        float: left;
+	        background: #bbffaa;
+	        border: 1px solid #ccc;
+	    }
+	    
+	    .bottom {
+	        width: 800px;
+	    }
+	    
+	    .bottom div,
+	    .bottom span {
+	        display: block;
+	        width: 80px;
+	        height: 80px;
+	        margin: 5px;
+	        background: #bbffaa;
+	        float: left;
+	        font-size: 14px;
+	    }
+	    .bottom .small {
+	        width      : 60px;
+	        height     : 25px;
+	        font-size  : 12px;
+	        background : #fab;
+	    }
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<h2>子选择器与后代选择器</h2>
+	<div class="left">
+		<div class="arron">
+			<p>div下的第一个p元素</p>
+		</div>
+		<div class="arror">
+			<p>div下的第一个p元素</p>
+		</div>
+	</div>
+	<div class="right">
+		<div class="imooc">
+			<article>
+				<p>div下的article下的p元素</p>
+			</article>
+		</div>
+		<div class="imooc">
+			<article>
+				<p>div下的article下的p元素</p>
+			</article>
+		</div>
+	</div>
+
+	<h2>相邻兄弟选择器与一般兄弟选择器</h2>
+    <div class="bottom">
+        <div>兄弟节点div, +~选择器不能向前选择</div>
+        <span class="prev">选择器span元素</span>
+        <div>span后第一个兄弟节点div</div>
+        <div>兄弟节点div
+            <div class="small">子元素div</div>
+        </div>
+        <span>兄弟节点span,不可选</span>
+        <div>兄弟节点div</div>
+    </div>
+	<script>
+		$('div > p').css('border','1px solid blue');
+		$('div p').css('border','1px solid yellow');
+		$('.prev+div').css('border','1px solid pink');
+		$('.prev~div').css('border','1px solid red');
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>类选择器class</title>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<div class="aaron">
+		<p>class="arror"</p>
+		<p>选中</p>
+	</div>
+	<div class="aaron">
+		<p>class="arror"</p>
+		<p>选中</p>
+	</div>
+	<div class="imooc">
+		<p>class="imooc"</p>
+		<p>jquery选中</p>
+	</div>
+	<div class="imooc">
+		<p>class="imooc"</p>
+		<p>jquery未选中</p>
+	</div>
+	<script>
+		//通过原生方法处理
+		var div = document.getElementsByClassName('aaron');
+		for(var i = 0; i < div.length; i++){
+			div[i].style.border = '3px solid blue';
+		}
+		
+		//通过jquery处理
+		var $div = $('.imooc'); //jquery对象
+		$div.css('border','3px solid red');
+	</script>
+</body>
+</html>

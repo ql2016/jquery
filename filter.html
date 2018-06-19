@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>筛选选择器</title>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<h2>基本筛选器</h2>
+	<h3>:first/:last/:even/:odd</h3>
+	<div class="left">
+		<div class="div">
+			<p>div:first</p>
+			<p>:even</p>
+		</div>
+		<div class="div">
+			<p>:odd</p>
+		</div>
+		<div class="div">
+			<p>:even</p>
+		</div>
+		<div class="div">
+			<p>:odd</p>
+		</div>
+		<div class="div">
+			<p>:even</p>
+		</div>
+		<div class="div">
+			<p>div:last</p>
+			<p>:odd</p>
+		</div>
+	</div>
+
+	<h3>:eq/:gt/:lt</h3>
+	<div class="left">
+	    <div class="aaron">
+	        <p>:lt(3)</p>
+	    </div>
+	    <div class="aaron">
+	        <p>:lt(3)</p>
+	    </div>
+	    <div class="aaron">
+	        <p>:eq(2)</p>
+	    </div>
+	    <div class="aaron">
+	    </div>
+	    <div class="aaron">
+	        <p>:gt(3)</p>
+	    </div>
+	    <div class="aaron">
+	        <p>:gt(3)</p>
+	    </div>
+	</div>
+
+	<h3>:not</h3>
+    <div class="left">
+        <div>
+            <input type="checkbox" name="a" />
+            <p>Aaron</p>
+        </div>
+        <div>
+            <input type="checkbox" name="b" />
+            <p>慕课</p>
+        </div>
+        <div>
+            <input type="checkbox" name="c" checked="checked" />
+            <p>其他</p>
+        </div>
+    </div>
+	<script>
+		$('.div:first').css('border','2px solid #2C10F3'); //第一个
+		$('.div:last').css('border','2px solid #E73030');  //最后一个
+		$('.div:even').css('border','2px solid #EF09DF');  //索引值为偶数的元素
+		$('.div:odd').css('border','2px solid #09EDEF');   //索引值为奇数的元素
+		$(".aaron:eq(2)").css("border", "2px solid #E73030"); //索引值为2的元素
+		$(".aaron:gt(2)").css("border", "2px solid #2C10F3"); //索引值大于2的元素
+		$(".aaron:lt(1)").css("border", "2px solid #F0E00D"); //索引值小于1的元素
+		$("input:not(:checked) + p").css("border", "2px solid #18F014"); //索引值小于1的元素
+	</script>
+</body>
+</html>
