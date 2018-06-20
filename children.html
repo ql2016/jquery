@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>子元素筛选选择器</title>
+    <style>
+        .left {
+        width: auto;
+        height: 120px;
+    }
+    
+    .left div {
+        width: 150px;
+        height: 100px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        background: #bbffaa;
+        border: 1px solid #ccc;
+    }
+    a{
+        display: block;
+    }
+    </style>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<h2>子元素筛选选择器</h2>
+    <h3>:first-child、:last-child、:only-child</h3>
+    <div class="left first-div">
+        <div class="div">
+            <a>:first-child</a>
+            <a>第二个元素</a>
+            <a>:last-child</a>
+        </div>
+        <div class="div">
+            <a>:first-child</a>
+        </div>
+        <div class="div">
+            <a>:first-child</a>
+            <a>第二个元素</a>
+            <a>:last-child</a>
+        </div>
+    </div>
+
+	<h3>:nth-child、:nth-last-child</h3>
+    <div class="left last-div">
+        <div class="div">
+            <a>:first-child</a>
+            <a>第二个元素</a>
+            <a>第三个元素</a>
+            <a>:last-child</a>
+        </div>
+        <div class="div">
+            <a>:first-child</a>
+            <a>第二个元素</a>
+        </div>
+        <div class="div">
+            <a>:first-child</a>
+            <a>第二个元素</a>
+            <a>第三个元素</a>
+            <a>:last-child</a>
+        </div>
+    </div>
+
+	<script>
+		$('.first-div a:first-child').css("border", "3px groove red");
+		$('.first-div a:last-child').css("color", "red");
+		$('.first-div a:only-child').css("color", "blue");
+		$('.last-div a:nth-child(2)').css("color", "#CD00CD");
+        $('.last-div a:nth-last-child(2)').css("color", "red");
+	</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性筛选选择器</title>
+	<style>
+		.left {
+        width: auto;
+        height: 120px;
+    }
+    
+    .left div {
+        width: 100px;
+        height: 70px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        background: #bbffaa;
+        border: 1px solid #ccc;
+    }
+    
+    .bottom {
+        width: 800px;
+    }
+    
+    .bottom div,
+    .bottom span {
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: 5px;
+        background: #bbffaa;
+        float: left;
+        font-size: 14px;
+    }
+    
+    .bottom .small {
+        width: 60px;
+        height: 25px;
+        font-size: 12px;
+        background: #fab;
+    }
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<h2>属性筛选选择器</h2>
+    <h3>[att=val]、[att]、[att|=val]、[att~=val]</h3>
+    <div class="left" testattr="true" >
+        <div class="div" testattr="true" name='p1'>
+            <a>[att=val]</a>
+        </div>
+        <div class="div" testattr="true" p2>
+            <a>[att]</a>
+        </div>
+        <div class="div" testattr="true" name="-">
+            <a>[att|=val]</a>
+        </div>
+        <div class="div" testattr="true" name="a b">
+            <a>[att~=val]</a>
+        </div>
+    </div>
+
+	<h3>[att^=val]、[att*=val]、[att$=val]、[att!=val]</h3>
+    <div class="left" testattr="true" >
+        <div class="div" testattr="true"  name='imooc-aaorn'>
+            <a>[att^=val]</a>
+        </div>
+        <div class="div" testattr="true"  name='aaorn-imooc'>
+            <a>[att$=val]</a>
+        </div>
+        <div class="div" testattr="true"  name="attr-test-selector">
+            <a>[att*=val]</a>
+        </div>
+        <div class="div" name="a b">
+            <a>[att!=val]</a>
+        </div>
+    </div>
+
+	<script>
+		$('div[name=p1]').css("border", "3px groove red");
+		$('div[p2]').css("border", "3px groove blue");
+		$('div[name|="-"]').css("border", "3px groove #00FF00");
+		$('div[name~="a"]').css("border", "3px groove #668B8B");
+		$('div[name^="imooc"]').css("border", "3px groove red");
+		$('div[name$="imooc"]').css("border", "3px groove blue");
+		$('div[name*="test"]').css("border", "3px groove #00FF00");
+		$('div[testattr!=true]').css("border", "3px groove #668B8B"); 
+	</script>
+</body>
+</html>
