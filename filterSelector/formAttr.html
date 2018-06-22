@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单对象属性筛选选择器</title>
+    <style>
+       input{
+            display: block;
+            margin: 10px;
+            padding:10px;
+        }
+    </style>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<h2>表单对象属性筛选选择器</h2>
+    <h3>enabled、disabled</h3>
+    <form>
+        <input type="text" value="未设置disabled" />
+        <input type="text" value="设置disabled" disabled="disabled" />
+        <input type="text" value="未设置disabled" />
+    </form>
+
+    <h3>checked、selected</h3>
+    <form>
+        <input type="checkbox" checked="checked">
+        <input type="checkbox">
+        <input type="radio" checked>       
+        <input type="radio">
+        
+        <select name="garden" multiple="multiple">
+            <option>imooc</option>
+            <option selected="selected">慕课网</option>
+            <option>aaron</option>
+            <option selected="selected">博客园</option>
+          </select>
+
+    </form>
+
+	<script>
+		$('input:enabled').css("border", "2px groove red");
+        $('input:disabled').css("border", "2px groove blue");
+        $('input:checked').removeAttr('checked');
+        $('option:selected').removeAttr('selected');
+	</script>
+</body>
+</html>
