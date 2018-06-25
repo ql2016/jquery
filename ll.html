@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery与dom</title>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		div {
+			border: 1px solid #ddd;
+			margin: 20px;
+			padding: 10px;
+		}
+		button {
+			display: inline-block;
+			width: 80px;
+			height: 30px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="demo1 clearfix">
+		<form action="">
+			<input type="text" value="text">
+			<input type="password" value="password">
+			<input type="image" value="image">
+			<input type="file" disabled="disabled">
+			<input type="checkbox" checked>
+			<input type="radio">
+			<select name="" id="">
+				<option value="">1</option>
+				<option value="">2</option>
+				<option value="" selected>3</option>
+			</select>
+			<button type="submit">submit</button>
+			<button type="reset">reset</button>
+		</form>
+	</div>
+	<div class="demo2 clearfix">
+		<span name="s">第1个span</span>
+		<span name="e-u">第2个span</span>
+		<span name="caw">第3个span</span>
+		<span>第4个span</span>
+	</div>
+	<div class="demo3">
+		<p name="p">第1个p</p>
+		<p name="p">第2个p</p>
+		<p name="aaw">第3个p</p>
+	</div>
+	<div class="demo4 clearfix">
+		<p name="ps">第1个p</p>
+		<p>第2个p</p>
+		<p name="h j">第3个p</p>
+		<p>第4个p</p>
+		<span name="ps">第1个span</span>
+		<span name="yaw">第2个span</span>
+	</div>
+	<div class="demo5 clearfix">
+		<span name="s">span</span>
+	</div>
+	<script>
+		/*$('div:first').css('color','#FF6353');
+		$('div:last').css('color','#FF3CFC');
+		$('div:odd()').css('color','#5356FF');
+		$('div:even()').css('color','#6CFF22');
+		$('div:gt(2)').css('color','#FFAB0A');
+		$('div:lt(2)').css('color','#FF0805');
+		$('div:not(".clearfix")').css('color','#24CBFF');
+		$('div:eq(0)').css('color','#A724FF');*/
+
+		/*$('.demo3 p:first-child').css('color','#09FF34');
+		$('.demo3 p:last-child').css('color','#FFA39C');
+		$('.demo2 span:nth-last-child(1)').css('color','#FF63FC');
+		$('.demo2 span:nth-child(1)').css('color','#96C8FF');
+		$('.demo5 span:only-child').css('color','#FFEF25');*/
+
+		/*$('.demo1 input:text').css('background','#FF8C82');
+		$('.demo1 input:password').css('background','#FFA2ED');
+		$('.demo1 input:image').css('background','#A9C5FF');
+		$('.demo1 input:file').css('background','#FFE667');
+		$('.demo1 input:checkbox').removeAttr('checked');
+		$('.demo1 input:radio').attr('checked','checked');
+		$('.demo1 button:submit').css('background','#A0FFE3');
+		$('.demo1 button:reset').css('background','#9D81FF');*/
+
+		/*$('.demo1 input:checked').removeAttr('checked');
+		$('.demo1 option:selected').removeAttr('selected');
+		$('.demo1 input:disabled').removeAttr('disabled');
+		$('.demo1 input:enabled').css("border","1px solid red");*/
+
+		/*$('p[name=p]').css('color','#FF66EB');
+		$('p[name^=p]').css('color','#FF675E');
+		$('p[name$=w]').css('color','#FFBF29');
+		//$('span[name]').css('color','#0FFF4A');
+		$('span[name*=a]').css('color','#0FFF4A');
+		$('p[name~=j]').css('color','#FF25A3');
+		$('span[name|=e]').css('color','#2129FF');*/
+
+		
+	</script>
+</body>
+</html>
