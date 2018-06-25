@@ -21,6 +21,14 @@
         a,p{
             display: block;
         }
+        .demo {
+            width: 600px;
+            height: 100px;
+            padding: 10px;
+            margin: 10px;
+            background: #bbffaa;
+            border: 1px solid #ccc;
+        }
     </style>
     <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
 </head>
@@ -38,6 +46,11 @@
             <a>:last-child</a>
         </div>
     </div>
+
+    <div class="demo">
+       <span>我是div.demo中第一个P元素：<a href="#">我在第一个P里面</a></span>
+       <span>这是一个段落元素，里面包含了一个a链接元素<a href="#">W3CPLUS</a></span>
+    </div>
     
     <h4>显示通过html方法获取到的内容</h4>
     <p></p>
@@ -47,13 +60,14 @@
 
     <script>
         //$('p:first').html($('.div:first').html())
-        $('p:first').text($('.div:first').html());
+        $('p:first').text($('.first-div').html());
         $('p:last').text($('.div:last').text());
         $(".left a:first").text('替换第一个a元素的内容');
         $(".left div:first").html('整个div的子节点都被替换了');
         $('.div:last a:first').text(function(index,text){
             return '新的' + text
         })
+        document.write($('.demo span').html())
     </script>
 </body>
 </html>

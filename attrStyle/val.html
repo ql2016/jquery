@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性与样式--val</title>
+    <style>
+        .left {
+            width: auto;
+            height: 120px;
+        }
+    
+        .left div {
+            width: 150px;
+            height: 70px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            background: #bbffaa;
+            border: 1px solid #ccc;
+        }
+        a,p{
+            display: block;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性与样式--html/text</title>
+    <style>
+        .left {
+            width: auto;
+            height: 120px;
+        }
+    
+        .left div {
+            width: 150px;
+            height: 70px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            background: #bbffaa;
+            border: 1px solid #ccc;
+        }
+        a,p{
+            display: block;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+    <h3>.val()</h3>
+    
+    <select id="single">
+        <option>hello</option>
+        <option>github</option>
+    </select>
+    
+    <select id="multiple" multiple="multiple">
+        <option selected="selected">imocc</option>
+        <option>hello</option>
+        <option selected="selected">gothub</option>
+    </select>
+
+    <input type="text" value="click a button" />
+    <p></p>
+
+</body>
+</html>
+    <script>
+        $('p').text($('#single').val());
+        $('p').text($('#multiple').val());
+        $('input[type=text]').val('hello')
+    </script>
+</body>
+</html>
