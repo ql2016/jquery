@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性与样式--attr/removeAttr</title>
+	<style>
+		input {
+            display    : block;
+            margin     : 10px;
+            padding    : 10px;
+            background : #bbffaa;
+            border     : 1px solid #ccc;
+            width: 300px;
+        }
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<h2>.attr()与.removeAttr()</h2>
+    <h3>.attr</h3>
+    <form>
+        <input type="text" value="设置value" />
+        <input type="text" value="获取value"/>
+        <input type="text" value="回调拼接value" />
+        <input type="text" value="删除value" />
+    </form>
+
+	<script>
+		$('input:first').attr('value','原值:设置value，新值:随便设置');
+        document.write('获取第二个input的value: ' + $('input:eq(1)').attr('value'));
+        $('input:eq(2)').attr('value',function(i,val){
+            return '组合+' + val
+        });
+        $('input:eq(3)').removeAttr('value');
+	</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性与样式--html/text</title>
+    <style>
+        .left {
+            width: auto;
+            height: 120px;
+        }
+    
+        .left div {
+            width: 150px;
+            height: 70px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            background: #bbffaa;
+            border: 1px solid #ccc;
+        }
+        a,p{
+            display: block;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+    <h3>.html()与.text()</h3>
+    <div class="left first-div">
+        <div class="div">
+            <a>:first-child</a>
+            <a>第一个元素</a>
+            <a>:last-child</a>
+        </div>  
+        <div class="div">
+            <a>:first-child</a>
+            <a>第二个元素</a>
+            <a>:last-child</a>
+        </div>
+    </div>
+    
+    <h4>显示通过html方法获取到的内容</h4>
+    <p></p>
+
+    <h4>显示通过text方法获取到的内容</h4>
+    <p></p>
+
+    <script>
+        //$('p:first').html($('.div:first').html())
+        $('p:first').text($('.div:first').html());
+        $('p:last').text($('.div:last').text());
+        $(".left a:first").text('替换第一个a元素的内容');
+        $(".left div:first").html('整个div的子节点都被替换了');
+        $('.div:last a:first').text(function(index,text){
+            return '新的' + text
+        })
+    </script>
+</body>
+</html>
