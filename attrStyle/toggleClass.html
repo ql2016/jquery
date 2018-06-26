@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性与样式--toggleClass</title>
+	<style>
+		body,
+        table,
+        td,
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+        
+        .h {
+            background: #f3f3f3;
+            color: #000;
+        }
+        
+        .c {
+            background: red;
+            color: #000;
+        }
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<h4>.toggleClass(className)和.toggleClass(className,switch)</h4>
+    <table id="table" width="50%" border="0" cellpadding="3" cellspacing="1">
+        <tr>
+            <td>慕课jQuery入门</td>
+            <td>慕课jQuery入门</td>
+        </tr>
+        <tr>
+            <td>慕课jQuery入门</td>
+            <td>慕课jQuery入门</td>
+        </tr>
+        <tr>
+            <td>慕课jQuery入门</td>
+            <td>慕课jQuery入门</td>
+        </tr>
+        <tr>
+            <td>慕课jQuery入门</td>
+            <td>慕课jQuery入门</td>
+        </tr>
+        <tr>
+            <td>慕课jQuery入门</td>
+            <td>慕课jQuery入门</td>
+        </tr>
+    </table>
+
+	<script>
+        //$('#table tr').toggleClass('c'); 
+        //$('#table tr:odd').toggleClass('c'); 
+        $('#table tr:odd').toggleClass('c',true)   
+	</script>
+</body>
+</html>

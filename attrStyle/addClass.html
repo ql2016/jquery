@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>属性与样式--attr/removeAttr</title>
+	<title>属性与样式--addClass/removeClass</title>
 	<style>
 		.left,
         .right {
@@ -41,12 +41,12 @@
         </div>
     </div>
     <div class="right">
-        <div class="aa bb imooc">
+        <div class="aa bb imoocClass">
             <article>
                 <p>imoocClass</p>
             </article>
         </div>
-        <div class="bb cc imooc ">
+        <div>
             <article>
                 <p>imoocClass</p>
             </article>
@@ -56,14 +56,14 @@
 	<script>
 		$('.left div').addClass('newClass');
         $('div').addClass(function(index,className){
-            document.write(className);
+            document.write("'" + className + "', ");
             if(className.indexOf('cc') !== -1){
                 $(this).addClass('imoocClass')
             }
         })
-        $('.right div:last').removeAttr(function(index,className){
-            document.write(className);
-            $(this).removeAttr(className);
+        $('.right div:first').removeClass(function(index,className){
+            //document.write("'" + className + "', ");
+            $(this).next().addClass(className);
             return 'imoocClass'
         })
 	</script>
