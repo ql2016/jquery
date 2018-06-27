@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM内部插入before()与after()</title>
+	<style>
+		.aaron{
+            border: 1px solid red;
+        }
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<h2>通过before与after添加元素</h2>
+    <button id="bt1">点击通过jQuery的before添加元素</button>
+    <button id="bt2">点击通过jQuery的after添加元素</button>
+    <div class="aaron">
+        <p class="test1">测试before</p>
+    </div>
+    <div class="aaron">
+        <p class="test2">测试after</p>
+    </div>
+
+	<script>
+        $('#bt1').on('click',function(){
+            $('.test1').before('<p>我是通过before进来的</p>','<p>我的位置显示是在已有内容前面哟</p>');
+        })
+        $('#bt2').on('click',function(){
+            $('.test2').after('<p>我是通过after进来的</p>','<p>我的位置显示是在已有内容后面哟</p>');
+        })
+	</script>
+</body>
+</html>

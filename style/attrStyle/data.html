@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性与样式--data</title>
+	<style>
+		.left,
+        .right {
+            width: 300px;
+            height: 120px;
+        }
+        
+        .left div,
+        .right div {
+            width: 100px;
+            height: 90px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            border: 1px solid #ccc;
+        }
+        
+        .left div {
+            background: #bbffaa;
+        }
+        
+        .right div {
+            background: yellow;
+        }
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<h2>jQuery.data()静态方法</h2>
+    <div class="left">
+        <div class="aaron">
+            <p>点击看结果</p>
+            <p>jQuery.data</p>
+        </div>
+        <div><span></span></div>
+    </div>
+    <h2>.data()实例方法</h2>
+    <div class="right">
+        <div class="aaron">
+            <p>点击看结果</p>
+            <p>.data</p>
+        </div>
+        <div><span></span></div>
+    </div>
+	<script>
+        $('.left').on('click',function(){
+            var ele = $(this);
+            $.data(ele,'a','data test');
+            $.data(ele,'b',{
+                name: 'qq'
+            });
+            ele.find('span').text($.data(ele,'a') + $.data(ele,'b').name)
+        })
+        $('.right').on('click',function(){
+            var ele = $(this);
+            ele.data('a','data test');
+            ele.data('b',{
+                name: 'qq'
+            });
+            ele.find('span').text(ele.data('a') + ele.data('b').name)
+        })
+
+        //data与attr区别: data是从jquery对象读取属性,attr从DOM元素读取属性
+	</script>
+</body>
+</html>

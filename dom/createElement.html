@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM创建节点及节点属性</title>
+	<style>
+		.left,
+        .right {
+            width: 300px;
+            height: 120px;
+        }
+        
+        .left div,
+        .right div {
+            width: 100px;
+            height: 90px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            border: 1px solid #ccc;
+        }
+        
+        .left div {
+            background: #bbffaa;
+        }
+        
+        .right div {
+            background: yellow;
+        }
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<h2>动态创建元素节点</h2>
+    <div class="left">
+        <div class="aaron">点击body区域会动态创建元素节点</div>
+    </div>
+	<script>
+        //javascript原生
+        /*var body = document.querySelector('body');
+        document.addEventListener('click',function(){
+            var rightdiv = document.createElement('div');
+            var rightaaron = document.createElement('div');
+
+            rightdiv.setAttribute('class','right');
+            rightaaron.className = 'aaron';
+            rightaaron.innerHTML = '动态创建DIV元素节点';
+
+            rightdiv.appendChild(rightaaron);
+
+            body.appendChild(rightdiv)
+        })*/
+
+        //jquery 
+        var $body = $('body');
+        $body.on('click',function(){
+            var div = $("<div class='right'><div class='aaron'>动态创建DIV元素节点</div></div。");
+            $body.append(div);
+        })
+	</script>
+</body>
+</html>
