@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM节点删除remove()</title>
+    <style>
+        .test1 {
+            background: #bbffaa;
+        }
+        
+        .test2 {
+            background: yellow;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+    <h2>通过jQuery remove方法移除元素</h2>
+    <div class="test1">
+        <p>p元素1</p>
+        <p>p元素2</p>
+    </div>
+    <div class="test2">
+        <p>p元素3</p>
+        <p>p元素4</p>
+    </div>
+    <button>通过点击jQuery的remove移除元素</button>
+    <button>通过点击jQuery的remove移除指定元素</button>
+
+    <script>
+        //remove不仅删除div里面的元素,div本身也删除
+        $('button:first').on('click',function(){
+            $('.test1').remove();
+        })
+        //指定节点删除
+        $('button:last').on('click',function(){
+            //$('p').remove(':contains(3)');
+            $('p').filter(':contains(3)').remove();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM节点删除empty()</title>
+    <style>
+        div {
+            background: #bbffaa;
+            width: 300px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+    <h2>通过empty移除元素</h2>
+    <div id="test">
+        <p>p元素1</p>
+        <p>p元素2</p>
+    </div>
+    <button>点击通过jQuery的empty移除元素</button>
+
+    <script>
+        //empty只删除div里面的元素,但是div本身没有删除
+        $('button').on('click',function(){
+            $('#test').empty();
+        })
+    </script>
+</body>
+</html>

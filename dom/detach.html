@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM节点删除detach()</title>
+    <style>
+         p {
+            color: red;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+    <p>P元素1，默认给绑定一个点击事件</p>
+    <p>P元素2，默认给绑定一个点击事件</p>
+    <button id="bt1">点击删除 p 元素</button>
+    <button id="bt2">点击移动 p 元素</button>
+
+    <script>
+        $('p').click(function(e){
+            alert(e.target.innerHTML);
+        })
+        var p;
+        $('#bt1').on('click',function(){
+            console.log(!$('p').length)
+            if(!$('p').length) return;
+            p = $('p').detach();
+            console.log(p)
+        })
+        $('#bt2').on('click',function(){
+            $('body').append(p);
+        })
+    </script>
+</body>
+</html>

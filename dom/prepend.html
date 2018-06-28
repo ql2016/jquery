@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM内部插入prepend()与prependTo()</title>
+	<style>
+		.aaron1{
+            border: 1px solid red;
+        }
+        .aaron1 p {
+            color: red;
+        }
+        .aaron2{
+            border: 1px solid blue;
+        }
+        .aaron2 p {
+            color: blue;
+        }
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<h2>通过prepend与prependTo添加元素</h2>
+    <button id="bt1">点击通过jQuery的prepend添加元素</button>
+    <button id="bt2">点击通过jQuery的prependTo添加元素</button>
+    <div class="aaron1">
+        <p>测试prepend</p>
+    </div>
+    <div class="aaron2">
+        <p>测试prependTo</p>
+    </div>
+
+	<script>
+        $('#bt1').on('click',function(){
+            $('.aaron1').prepend('<p>我是通过prepend进来的</p>');
+        })
+        $('#bt2').on('click',function(){
+            $('<p>我是通过prependTo进来的</p>').prependTo($('.aaron2'));
+        })
+	</script>
+</body>
+</html>
