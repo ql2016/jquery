@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM替换replaceWith()与replaceAll()</title>
+	<style>
+		.right div {
+            background: yellow;
+        }
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<h2>replaceWith()和replaceAll()</h2>
+    <div class="left">
+        <button class="bt1">点击,通过replaceWith替换内容</button>
+        <button class="bt2">点击,通过rreplaceAll替换内容</button>
+    </div>
+    <div class="right">
+        <div>
+            <p>第一段</p>
+            <p>第二段</p>
+            <p>第三段</p>
+        </div>
+        <div>
+            <p>第四段</p>
+            <p>第五段</p>
+            <p>第六段</p>
+        </div>
+    </div>
+
+	<script>
+        $('.bt1').on('click',function(){
+            $('.right p:eq(1)').replaceWith('<a href="">我是通过replaceWith进来的</a>');
+        })
+        $('.bt2').on('click',function(){
+            $('<i>我是通过replaceAll进来的</i>').replaceAll('.right div:last p:nth-last-child(1)');
+        })
+	</script>
+</body>
+</html>
