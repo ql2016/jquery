@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery遍历find()</title>
+	<style>
+		.left {
+            width: auto;
+            height: 200px;
+        }
+        
+        .left div {
+            width: 150px;
+            height: 70px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            background: #bbffaa;
+            border: 1px solid #ccc;
+        }
+        
+        span {
+            color: blue;
+        }
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<h2>find方法()</h2>
+    <div class="left first-div">
+        <div class="div">
+            <ul class="level-1">
+                <li class="item-1">1</li>
+                <li class="item-2">2</li>
+                <li class="item-3">3</li>
+            </ul>
+        </div>
+        <div class="div">
+            <ul class="level-2">
+                <li class="item-1">1</li>
+                <li class="item-2 test">2</li>
+                <li class="item-3">3</li>
+            </ul>
+        </div>
+        <div class="div">
+            <ul class="level-3">
+                <li class="item-1">1</li>
+                <li class="item-2">2</li>
+                <li class="item-3">3</li>
+            </ul>
+        </div>
+    </div>
+    <button id="bt1">点击：find传递表达式</button>
+    <br/>
+    <br/>
+    <h3>find表达式</h3>
+    <div style="border:1px solid red;">
+        <p>
+            <span>测试1</span>
+            <a>测试2</a>
+        </p>
+        <p>
+            <span>测试3</span>
+            <a>测试4</a>
+        </p>
+        <div>
+            <span>Aaron1</span>
+            <a>Aaron2</a>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <button id="bt2">点击：find传递$对象</button>
+
+	<script>
+        $('#bt1').click(function(){
+            $('.left').find('li:last-child').css('border','1px solid red')
+        })
+        $("#bt2").click(function() {
+            $('p').find('span').css('color', 'blue')
+        })
+	</script>
+</body>
+</html>

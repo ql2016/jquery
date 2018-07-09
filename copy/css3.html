@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    ul {
+	    	height: 30px;
+	    	overflow: hidden;
+	    	line-height: 30px;
+	    }
+		li {
+
+			position: relative;
+			animation: moveUp 5s infinite;
+		}
+		@keyframes moveUp {
+			0% {
+				top: 0;
+			}
+			20% {
+				top: -30px;
+			}
+			40% {
+				top: -60px;
+			}
+			60% {
+				top: -90px;
+			}
+			80% {
+				top: -120px;
+			}
+			100% {
+				top: -150px;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>111111</li>
+			<li>22222</li>
+			<li>33333</li>
+			<li>4444</li>
+			<li>55555</li>
+			<li>111111</li>
+		</ul>
+	</div>
+</body>
+</html>
