@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery遍历add(),prev()</title>
+	<style>
+		.left {
+            width: auto;
+            height: 150px;
+        }
+        
+        .left div {
+            width: 150px;
+            height: 120px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            background: #bbffaa;
+            border: 1px solid #ccc;
+        }
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<h2>add方法()</h2>
+    <div class="left first-div">
+        <div class="div">
+            <ul>
+                <li>list item 1</li>
+                <li>list item 2</li>
+                <li>list item 3</li>
+            </ul>
+            <p>新的p元素</p>
+        </div>
+    </div>
+    <div class="right"></div>
+    <br/>
+    <button id="bt1">点击：add传递元素标签</button>
+    <button id="bt2">点击：add传递html结构</button>
+
+	<script>
+        $('#bt1').click(function(){
+            $('li').add('p').css('color','red')
+        })
+        $("#bt2").click(function() {
+            $('.item-2').siblings(':first').css('border', '2px solid blue')
+        })
+        $('#bt3').click(function(){
+            $('.item-3').prev().css('border','1px solid red')
+        })
+        $("#bt4").click(function() {
+            $('.item-2').prev(':first').css('border', '2px solid blue')
+        })
+	</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery遍历next(),prev()</title>
+	<style>
+		.left {
+            width: auto;
+            height: 200px;
+        }
+        
+        .left div {
+            width: 150px;
+            height: 70px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            background: #bbffaa;
+            border: 1px solid #ccc;
+        }
+        
+        span {
+            color: blue;
+        }
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<h2>next方法() prev()</h2>
+    <div class="left first-div">
+        <div class="div">
+            <ul class="level-1">
+                <li class="item-1">1</li>
+                <li class="item-2">2</li>
+                <li class="item-3">3</li>
+            </ul>
+        </div>
+        <div class="div">
+            <ul class="level-2">
+                <li class="item-1">1</li>
+                <li class="item-2">2</li>
+                <li class="item-3">3</li>
+            </ul>
+        </div>
+        <div class="div">
+            <ul class="level-3">
+                <li class="item-1">1</li>
+                <li class="item-2">2</li>
+                <li class="item-3">3</li>
+            </ul>
+        </div>
+    </div>
+    <button id="bt1">点击：next无参数</button>
+    <button id="bt2">点击：next传递表达式</button>
+    <button id="bt3">点击：prev无参数</button>
+    <button id="bt4">点击：prev传递表达式</button>
+
+	<script>
+        $('#bt1').click(function(){
+            $('.item-2').next().css('border','1px solid red')
+        })
+        $("#bt2").click(function() {
+            $('.item-1').next(':first').css('border', '2px solid blue')
+        })
+        $('#bt3').click(function(){
+            $('.item-3').prev().css('border','1px solid red')
+        })
+        $("#bt4").click(function() {
+            $('.item-2').prev(':first').css('border', '2px solid blue')
+        })
+	</script>
+</body>
+</html>
