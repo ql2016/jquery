@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>jquery遍历parent(),parents()</title>
+	<title>jquery遍历closest()</title>
 	<style>
 		.left {
             width: auto;
@@ -26,7 +26,7 @@
 	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
 </head>
 <body>
-	<h2>parent方法()</h2>
+	<h2>closest方法()</h2>
     <div class="left first-div">
 
     <div class="div">
@@ -66,23 +66,16 @@
     </div>
     </div>
 
-    <button id="bt1">点击：parent无参数</button>
-    <button id="bt2">点击：paren传递选择器</button>
-    <button id="bt3">点击：parents无参数</button>
-    <button id="bt4">点击：parents传递选择器</button>
+    <button id="bt1">点击：closest传递选择器 </button>
+    <button id="bt2">点击：closest传递一个元素对象</button>
 
 	<script>
         $('#bt1').click(function(){
-            $('.level-3').parent().css('border','1px solid red')
+            $('.item-1').closest('.level-2').css('border','1px solid red')
         })
         $("#bt2").click(function() {
-            $('.item-a').parent(':last').css('color', 'blue')
-        })
-        $('#bt3').click(function(){
-            $('.item-b').parents().css('border','1px solid red')
-        })
-        $("#bt4").click(function() {
-            $('.item-b').parents('.first-div').css('border', '2px solid blue')
+            var itemB = $('.item-b')
+            $('.item-1').closest(itemB).css('border', '2px solid blue')
         })
 	</script>
 </body>
