@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>clone\wrap\wrapAll\unwrap</title>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>11111</li>
+			<li>222222</li>
+			<li>33333</li>
+		</ul>
+	</div>
+	<button id="bt1">clone()</button>
+	<button id="bt2">wrap()</button>
+	<button id="bt3">wrapfunction()</button>
+	<button id="bt4">wrapAll()</button>
+	<button id="bt5">wrapAllfunction()</button>
+	<button id="bt6">wrapInner()</button>
+	<button id="bt7">wrapInnerfunction()</button>
+	<button id="bt8">replaceWith()</button>
+	<button id="bt9">replaceWithfunction()</button>
+	<button id="bt10">replaceAll()</button>
+</body>
+<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+<script>
+	$('li').click(function(event) {
+		console.log(1)
+	});
+	$('#bt1').click(function(event) {
+		$('ul').append($('li:first').clone(true))
+		console.log($('li:first').clone())
+	});
+
+	$('#bt2').click(function(event) {
+		console.log($('ul div').length)
+		if(!$('ul div').length){
+			$('li').wrap('<div></div>')
+		}else {
+			$('li').unwrap('<div></div>')
+		}		
+	});
+	$('#bt3').click(function(event) {
+		if(!$('ul div').length){
+			$('li').wrap(function(){
+				return '<div></div>'
+			})
+		}else {
+			$('li').unwrap()
+		}		
+	});
+	$('#bt4').click(function(event) {
+		if(!$('ul div').length){
+			$('li').wrapAll('<div></div>')
+		}else {
+			$('li').unwrap()
+		}		
+	});
+	$('#bt5').click(function(event) {
+		if(!$('ul div').length){
+			$('li').wrapAll(function(){
+				return '<div></div>'
+			})
+		}else {
+			$('li').unwrap()
+		}		
+	});
+	$('#bt6').click(function(event) {
+		if(!$('ul p').length){
+			$('li').wrapInner('<p></p>')
+		}	
+	});
+	$('#bt7').click(function(event) {
+		if(!$('ul p').length){
+			$('li').wrapInner(function(){
+				return '<p></p>'
+			})
+		}		
+	});
+	$('#bt8').click(function(event) {
+		$('li:first').replaceWith('<a>我是a，我是通过repalceWith转过来的</a>')		
+	});
+	$('#bt9').click(function(event) {
+		$('li:first').replaceWith(function(){
+			return '<a>我是a，我是通过repalceWithfunction转过来的</a>'
+		})		
+	});
+	$('#bt10').click(function(event) {
+		$('<a>我是a，我是通过repalceAll转过来的</a>').replaceAll('li:first')		
+	});
+</script>
+</html>
