@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>jquery遍历add()</title>
+	<title>jquery遍历each()</title>
 	<style>
 		.left {
             width: auto;
@@ -22,7 +22,7 @@
 	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
 </head>
 <body>
-	<h2>add方法()</h2>
+	<h2>each方法()</h2>
     <div class="left first-div">
         <div class="div">
             <ul>
@@ -30,22 +30,33 @@
                 <li>list item 2</li>
                 <li>list item 3</li>
             </ul>
-            <p>新的p元素</p>
+        </div>
+        <div class="div">
+            <ul>
+                <li>list item 4</li>
+                <li>list item 5</li>
+                <li>list item 6</li>
+            </ul>
         </div>
     </div>
-    <div class="right"></div>
+
     <br/>
-    <button id="bt1">点击：add传递元素标签</button>
-    <button id="bt2">点击：add传递html结构</button>
+    <button id="bt1">点击：each方法遍历元素</button>
+    <button id="bt2">点击：each方法回调判断</button>
 
 	<script>
         $('#bt1').click(function(){
-            //$('li').add('p').css('color','red') //选择器字符串
-            //$('li').add($('p')).css('color','red') //jquery对象
-            $('li').add(document.getElementsByTagName('p')).css('color','red') //dom元素
+            $('li').each(function(index,element){
+                $(this).css('color','blue')
+            })
         })
         $("#bt2").click(function() {
-            $('p').add('<br /><a>add</a>').appendTo('body').css('background','yellow') //html
+            $('li').each(function(index,element){
+                if(index % 2){
+                   $(this).css('color','blue')  
+                }
+                
+            })
         })
 	</script>
 </body>

@@ -71,6 +71,17 @@
     <button id="bt3">点击：parents无参数</button>
     <button id="bt4">点击：parents传递选择器</button>
 
+    <ul id="menu" style="width:100px;"> 
+        <li> 
+            <ul> 
+                <li>
+                    <a href="#">Home</a>
+                </li>
+            </ul> 
+        </li>
+        <li>End</li>
+     </ul> 
+
 	<script>
         $('#bt1').click(function(){
             $('.level-3').parent().css('border','1px solid red')
@@ -84,6 +95,13 @@
         $("#bt4").click(function() {
             $('.item-b').parents('.first-div').css('border', '2px solid blue')
         })
+        $("#menu a").click(function() {
+            //$(this).parent("ul").css("background", "yellow"); //0 
+            //$(this).parent("li").parent("ul").css("background", "yellow"); //1
+            //$(this).parents("ul").css("background", "yellow"); //2 
+            $(this).closest("ul").css("background", "yellow"); //3 return false; 
+        }); 
+
 	</script>
 </body>
 </html>
