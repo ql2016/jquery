@@ -57,12 +57,14 @@
 		$('.left div').addClass('newClass');
         $('div').addClass(function(index,className){
             document.write("'" + className + "', ");
+            console.log(className.indexOf('cc'));
             if(className.indexOf('cc') !== -1){
+                console.log($(this))
                 $(this).addClass('imoocClass')
             }
         })
         $('.right div:first').removeClass(function(index,className){
-            //document.write("'" + className + "', ");
+            document.write("'" + className + "', ");
             $(this).next().addClass(className);
             return 'imoocClass'
         })
